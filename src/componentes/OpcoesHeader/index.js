@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
-const OpcoesContainer = styled.div`
+const Opcoes = styled.ul`
 
-.opcoes {
     display: flex;
-}
 
-.opcao{
-    font-size: 16px;
+`
+
+const Opcao = styled.li`
+
+  font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +17,6 @@ const OpcoesContainer = styled.div`
     padding: 0 5px;
     cursor: pointer;
     min-width: 120px;
-}
 
 `
 
@@ -24,13 +24,13 @@ const textoOpcoes = ['CATEGORIAS', 'MEUS LIVROS', 'FAVORITOS', 'PROMOÇÕES'];
 
 function OpcoesHeader() {
     return (
-        <OpcoesContainer>
-        <ul className='opcoes'>
+        <div>
+        <Opcoes>
           {textoOpcoes.map((texto) => (
-            <li className='opcao'><p>{texto}</p></li>
+            <Opcao><p>{texto}</p></Opcao>
           ))}
-        </ul>
-        </OpcoesContainer>
+        </Opcoes>
+        </div>
     );
 }
 
