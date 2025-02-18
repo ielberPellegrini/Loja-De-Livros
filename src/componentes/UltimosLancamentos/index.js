@@ -1,5 +1,8 @@
 import { livros } from './dadosUltimosLancamentos'
 import styled from 'styled-components'
+import { Titulo } from '../Titulo'
+import CardRecomenda from '../CardRecomenda'
+import imagemLivro from '../../imagens/livro2.png'
 
 
 const UltimosLancamentosContainer = styled.section`
@@ -7,16 +10,6 @@ const UltimosLancamentosContainer = styled.section`
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-`
-
-const Titulo = styled.h2`
-    width: 100%;
-    padding: 30px 0;
-    background-color: #FFF;
-    color: #EB9B00;
-    font-size: 36px;
-    text-align: center;
-    margin: 0;
 `
 
 const NovosLivrosContainer = styled.div`
@@ -30,12 +23,21 @@ const NovosLivrosContainer = styled.div`
 function UltimosLancamentos () {
     return (
         <UltimosLancamentosContainer>
-            <Titulo> Ultimos Lançamentos </Titulo>
+            <Titulo cor ="#EB9B00"
+            tamanhoFonte ="18px"
+            alinhamento ="center"
+            > Ultimos Lançamentos </Titulo>
             <NovosLivrosContainer>
             {livros.map ( livro => (
                 <img src = {livro.src} />
             ) ) }
             </NovosLivrosContainer>
+            <CardRecomenda
+            titulo = 'Pegando a manha do React'
+            subtitulo= 'Aprenda a usar o React'
+            descricao= 'Aprenda a usar o React, uma biblioteca muito popular no mercado'
+            img={imagemLivro}
+            />
            
         </UltimosLancamentosContainer>
     )
